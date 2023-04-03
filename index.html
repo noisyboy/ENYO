@@ -1,1 +1,95 @@
-<h1>Hi</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>E N Y O</title>
+    <style type="text/css" media="all">
+      body{
+        margin: 0;
+        background: black;
+      }
+       #flexbox{
+        border-radius: 10px;
+        padding: 40px;
+        width: 50vw;
+        height: 10vh;
+        background: radial-gradient(#ff005c,#111111);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        animation: blink 3s infinite alternate;
+      }
+      #search{
+      font-family: Courier;
+      color: lime;
+      background: black;
+      padding: 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+      font-size: auto;
+      }
+      @keyframes blink {
+        from{
+       box-shadow: 0 0px 2px red;   
+        }
+        to{
+      box-shadow: 0 0 15px #ff005f;  
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="flexbox">
+      <center>
+  <h3 style="font-family:monospace">E N Y 0</h3>
+  <span> <input type="search" name="search" id="search" placeholder="search" />
+  <button style="color:#ff005c;font-family:monospace; background:black;border: 1px solid white" id="searchBtn">GO</button></span>
+  </center>  
+    </div>
+  <p style="color:#ff005c;font-family:monospace">Select search engine</p>
+  <select style="color:#ff005c;font-family:monospace;background:black;border: 2px solid white" name="sEngine" id="sEngine">
+   <option value="1">GOOGLE</option> 
+   <option value="2">BING</option> 
+   <option value="3">YAHOO</option> 
+   <option value="4">DUCKDUCK-GO</option> 
+   <option value="5">YANDEX</option> 
+  </select>  
+   
+ <script type="text/javascript" charset="utf-8">
+ var search = document.getElementById("search") ;
+ var sEngine = document.getElementById("sEngine") ;
+ var searchBtn = document.getElementById("searchBtn") ;
+function SearchEngine(){
+var Ssengine;
+switch(sEngine.value){
+  case '1':
+  Ssengine = "https://www.google.com/search?q="
+  break;
+  case '2':
+  Ssengine="https://www.bing.com/search?q="
+  break;
+  case '3':
+  Ssengine = "https://search.yahoo.com/search?p="
+  break;
+  case '4':
+  Ssengine = "https://www.duckduckgo.com/?q="
+  break;
+  case '5':
+  Ssengine= "https://yandex.ru/search/?text="
+  break;
+}
+return Ssengine;
+} 
+searchBtn.onclick=function(){
+  location.href = SearchEngine()+search.value ; 
+ }
+search.onsearch = function(){
+  location.href = SearchEngine()+search.value ; 
+ }
+ </script>
+  </body>
+</html>
