@@ -1,1 +1,212 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><title>E N Y O</title><style type="text/css" media="all">body{margin:0;background:#1d1d1d}#main{width:100vw;height:100vh;background:radial-gradient(#24005e,#000);display:flex;flex-direction:column;justify-content:center;align-items:center}input:focus,select{outline:0}#flexbox{border-radius:10px;padding:40px;width:70vw;height:15vh;background:radial-gradient(#1d1d1d,#000);display:flex;flex-direction:column;justify-content:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:blink 10s infinite alternate}#search{font-family:Courier;color:#0f0;background:#000;padding:10px;border:1px solid #fff;font-size:auto}#menu{position:absolute;top:0}#onLineStat{width:10px;height:10px;border-radius:50%;display:inline-block}#searchBtn{border-radius:50%;width:25px;height:25px;font-size:10px}@keyframes blink{from{box-shadow:0 0 1px red}to{box-shadow:0 0 15px #ff005f}}</style></head><body><div id="main"><h1 style="font-family:monospace;color:#ff005c;font-size:50px;text-shadow:0 0 5px #ff005c;z-index:1;position:relative;top:-15vh">E N Y 0</h1><div id="flexbox"><span id="menu"><p style="color:#fff;font-family:monospace;display:inline-block">Select search engine &ensp;<div id="onLineStat"></div></p><select style="color:#ff005c;font-family:monospace;background:#000;border:1px solid #fff" name="sEngine" id="sEngine"><option value="custom">CUSTOM</option><option value="1">GOOGLE</option><option value="2">BING</option><option value="3">YAHOO</option><option value="4">DUCKDUCK-GO</option><option value="5">YANDEX</option><option value="6">SHODAN</option><option value="7">GIBIRU</option><option value="8">IZITO</option><option value="9">STARTPAGE</option><option value="10">BING VS GOOGLE</option><option value="11">Yahoo Adv</option><option value="12">Google Adv</option><option value="13">ADVANGLE</option></select></span><br><center><span><input type="search" name="search" id="search" placeholder="search"> &ensp;<button style="color:#ff005c;font-family:monospace;background:#000;border:1px solid #fff" id="searchBtn">GO</button></span></center></div></div><script type="text/javascript" charset="utf-8">var search=document.getElementById("search"),sEngine=document.getElementById("sEngine"),searchBtn=document.getElementById("searchBtn"),onLineStat=document.getElementById("onLineStat");function SearchEngine(){var e;switch(sEngine.value){case"custom":e="";break;case"1":e="https://www.google.com/search?q=";break;case"2":e="https://www.bing.com/search?q=";break;case"3":e="https://search.yahoo.com/search?p=";break;case"4":e="https://www.duckduckgo.com/?q=";break;case"5":e="https://yandex.ru/search/?text=";break;case"6":e="https://www.shodan.io/search?query=";break;case"7":e="https://gibiru.com/results.html?q=";break;case"8":e="https://www.izito.com/search?q=";break;case"9":location.href="https://www.startpage.com/";break;case"10":location.href="http://bvsg.org/";break;case"11":location.href="https://search.yahoo.com/web/advanced";break;case"12":location.href="https://www.google.com/advanced_search";break;case"13":location.href="http://advangle.com/"}return e}navigator.connection.onchange=function(){"none"==navigator.connection.type?onLineStat.style.background="red":onLineStat.style.background="lime"},searchBtn.onclick=function(){location.href=SearchEngine()+search.value},search.onsearch=function(){location.href=SearchEngine()+search.value}</script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>E N Y O</title>
+    <style type="text/css" media="all">
+      body{
+        margin: 0;
+        background:#1d1d1d;
+      }
+      #main{
+        width: 100vw;
+        height: 100vh;
+        background:radial-gradient(#24005e,black);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center ;
+      }
+      select, input:focus{
+        outline: none;
+      }
+       #flexbox{
+        border-radius: 10px;
+        padding: 40px;
+        width: 70vw;
+        height: 15vh;
+        background: radial-gradient(#1d1d1d,black);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* position: absolute; */
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+        animation: blink 10s infinite alternate;
+      }
+      #search{
+      font-family: Courier;
+      color: lime;
+      background: black;
+      padding: 10px;
+      border: 1px solid white;
+      font-size: auto;
+      }
+      #menu{
+      position: absolute;
+      top: 10%;
+      }
+      #onLineStat{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      #searchBtn{
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        font-size:10px;
+      }
+      @keyframes blink {
+        from{
+       box-shadow: 0 0px 1px red;   
+        }
+        to{
+      box-shadow: 0 0 15px #ff005f;  
+        }
+      }
+      #header{
+        z-index: 1;
+        display: none;
+        width: 100vw;
+        height: 20px;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    
+<div id="header">
+       <center>
+        <p>You are Offline &ensp;:-(</p>
+      </center>
+</div>
+
+
+<div id="main">
+ 
+<h1 style="font-family:monospace;color:#ff005c;font-size:50px;text-shadow: 0 0 5px #ff005c;z-index:1;">E N Y 0</h1>
+    
+<div id="flexbox">
+<span id="menu">  
+<p style="color:white;font-family:monospace;display:inline-block">Select search engine &ensp; 
+<div id="onLineStat"></div>
+</p>
+<select style="color:#ff005c;font-family:monospace;background:black;border: 1px solid white" name="sEngine" id="sEngine">
+   <option value="custom">CUSTOM</option>
+   <option value="1">GOOGLE</option> 
+   <option value="2">BING</option> 
+   <option value="3">YAHOO</option> 
+   <option value="4">DUCKDUCK-GO</option> 
+   <option value="5">YANDEX</option> 
+   <option value="6">SHODAN</option> 
+   <option value="7">GIBIRU</option> 
+     <option value="8">IZITO</option> 
+   <option value="9">STARTPAGE</option>
+   <option value="10">BING VS GOOGLE</option> 
+   <option value="11">Yahoo Adv</option> 
+   <option value="12">Google Adv</option> 
+   <option value="13">ADVANGLE</option> 
+  </select> 
+  </span> 
+  <br />
+  <center>
+  <span> <input type="search" name="search" id="search" placeholder="search" /> &ensp;
+  <button style="color:#ff005c;font-family:monospace; background:black;border: 1px solid white" id="searchBtn">GO</button></span>
+  </center>
+</div>
+    </div>
+
+   
+ <script type="text/javascript" charset="utf-8">
+ var search = document.getElementById("search") ;
+ var sEngine = document.getElementById("sEngine") ;
+ var searchBtn = document.getElementById("searchBtn") ;
+ var onLineStat = document.getElementById("onLineStat") ;
+var header = document.getElementById("header") ;
+function ConStatus(){
+   if(navigator.connection.type == "none"){
+     onLineStat.style.background="red";
+     header.style.display="block";
+   }
+   else{
+     onLineStat.style.background="lime";
+     header.style.display="none";
+   }
+}
+ConStatus();
+navigator.connection.onchange=function(){
+ if(navigator.connection.type == "none"){
+     onLineStat.style.background="red";
+     header.style.display="block";
+   }
+   else{
+     onLineStat.style.background="lime";
+     header.style.display="none";
+   }
+ }
+function SearchEngine(){
+var Ssengine;
+switch(sEngine.value){
+  case 'custom':
+  Ssengine=""
+  break;
+  case '1':
+  Ssengine = "https://www.google.com/search?q="
+  break;
+  case '2':
+  Ssengine="https://www.bing.com/search?q="
+  break;
+  case '3':
+  Ssengine = "https://search.yahoo.com/search?p="
+  break;
+  case '4':
+  Ssengine = "https://www.duckduckgo.com/?q="
+  break;
+  case '5':
+  Ssengine= "https://yandex.ru/search/?text="
+  break;
+  case '6':
+  Ssengine="https://www.shodan.io/search?query="
+  break;
+  case '7':
+  Ssengine="https://gibiru.com/results.html?q="
+  break;
+  case '8':
+  Ssengine="https://www.izito.com/search?q="
+  break;
+  case '9':
+  search.value=""
+  Ssengine="https://www.startpage.com/"
+  break;
+  case '10':
+  search.value=""
+  Ssengine="https://bvsg.org/";
+  break;
+  case '11':
+  search.value=""
+  Ssengine="https://search.yahoo.com/web/advanced";
+  break;
+  case '12':
+  search.value=""
+  Ssengine="https://www.google.com/advanced_search";
+  break;
+  case '13':
+  search.value=""
+  Ssengine="https://advangle.com/"
+  break;
+  
+}
+return Ssengine;
+} 
+searchBtn.onclick=function(){
+ location.href = SearchEngine()+search.value ; 
+ }
+search.onsearch = function(){
+  location.href = SearchEngine()+search.value ;
+ }
+ </script>
+  </body>
+</html>
